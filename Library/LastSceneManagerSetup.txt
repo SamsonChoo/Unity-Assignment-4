@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/OSC-Tutorial/OSC-Arduino.unity
+  isLoaded: 1
+  isActive: 1
