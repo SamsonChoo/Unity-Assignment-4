@@ -23,11 +23,11 @@ Adafruit_TPA2016 audioamp01 = Adafruit_TPA2016();
 
 //wifi and osc setting
 int status = WL_IDLE_STATUS;
-char ssid[] = "vivo 1723";
-char pass[] = "12345678";
+char ssid[] = "HUAWEI P20 lite";
+char pass[] = "0123456789";
 int keyIndex = 0;
 
-IPAddress sendToUnityPC_Ip(192,168,43,29);
+IPAddress sendToUnityPC_Ip(192,168,43,40);
 unsigned int sendToUnityPC_Port = 8000;
 unsigned int listenPort = 9000;
 
@@ -39,9 +39,12 @@ WiFiUDP Udp_listen;
 
 const int sensorPin = A0;
 
+int islight = 0;
+
 void setup() {
   //pinMode setting
   pinMode(12, OUTPUT);
+  pinMode(11, OUTPUT);
   //pinMode(13, INPUT);    
   //interrupt setting
   startTimer(1000); //1ms  //1-> 1s //100->10ms
@@ -86,13 +89,28 @@ void loop() {
       isVibrate = messageIn.getInt(0);
       vibrateFreq = messageIn.getInt(1);
       vibrateTime = messageIn.getInt(2);
+      islight = messageIn.getInt(3);
+
     }  
   }
 
   audioamp01.setGain(30);
-  vibrate(12,vibrateFreq,vibrateTime);    
+  vibrate(12,vibrateFreq,vibrateTime);
+  light(11);
 }
 
+void light (int pin) {
+  if (islight == 1){
+    digitalWrite(pin, HIGH);
+    delay(50);
+    digitalWrite(pin, LOW);
+    delay(50);
+    islight = 0 ;
+
+  }
+  }
+
+  
 void setTimerFrequency(int frequencyHz) {
   int compareValue = (CPU_HZ / (TIMER_PRESCALER_DIV * frequencyHz)) - 1;
   TcCount16* TC = (TcCount16*) TC3;

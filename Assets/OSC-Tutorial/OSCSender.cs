@@ -7,7 +7,8 @@ using OSCsharp.Data;
 public class OSCSender : UniOSCEventDispatcher{
 	
 	public bool triggerVibrate = false;
-	public int vibrateFreq = 0;
+    public bool triggerLed = false;
+    public int vibrateFreq = 0;
 	public int vibrateTime = 0;
 	// Update is called once per frame
 	void Update () {
@@ -16,8 +17,13 @@ public class OSCSender : UniOSCEventDispatcher{
         {
             sendVibrateState(1, vibrateFreq, vibrateTime);
         }
+        if (triggerLed)
+        {
+            sendLedState(1);
+        }
+        Debug.Log(triggerLed==false);
 
-	}
+    }
 
     public override void OnEnable()
     {
@@ -29,6 +35,8 @@ public class OSCSender : UniOSCEventDispatcher{
         AppendData(0);
 		AppendData(0);
 		AppendData(0);
+        AppendData(0);
+
     }
 
     private void sendVibrateState(int state, int freq, int time)
@@ -51,6 +59,31 @@ public class OSCSender : UniOSCEventDispatcher{
                 msg2.UpdateDataAt(0, state);
 				msg2.UpdateDataAt(1, changeFreqToWavelength(freq));
 				msg2.UpdateDataAt(2, time);
+            }
+        }
+
+        //Here we trigger the sending method 
+        _SendOSCMessage(_OSCeArg);
+    }
+
+    private void sendLedState(int state2)
+    {
+        //Here we update the data with the new value
+        if (_OSCeArg.Packet is OscMessage)
+        {
+            //Message
+            OscMessage msg3 = ((OscMessage)_OSCeArg.Packet);
+            msg3.UpdateDataAt(3, state2);
+
+
+        }
+        else if (_OSCeArg.Packet is OscBundle)
+        {
+            //Bundle
+            foreach (OscMessage msg4 in ((OscBundle)_OSCeArg.Packet).Messages)
+            {
+                msg4.UpdateDataAt(3, state2);
+
             }
         }
 
