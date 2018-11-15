@@ -45,6 +45,7 @@ void setup() {
   //pinMode setting
   pinMode(12, OUTPUT);
   pinMode(11, OUTPUT);
+  pinMode(9,OUTPUT)
   //pinMode(13, INPUT);    
   //interrupt setting
   startTimer(1000); //1ms  //1-> 1s //100->10ms

@@ -68,16 +68,16 @@
      <Compile Include="Assets\UniOSC\Scripts\ScriptableObjects\Editor\UniOSCMappingFileObjEditor.cs" />
      <Compile Include="Assets\UniOSC\Scripts\ScriptableObjects\Editor\UniOSCSessionFileObjEditor.cs" />
  <Reference Include="UnityEditor.StandardEvents">
- <HintPath>C:/Users/acer/Unity II/Unity Assigment 4/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+ <HintPath>C:/Users/acer/Unity Assigment 4/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>C:/Users/acer/Unity II/Unity Assigment 4/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>C:/Users/acer/Unity Assigment 4/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>C:/Users/acer/Unity II/Unity Assigment 4/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+ <HintPath>C:/Users/acer/Unity Assigment 4/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/Users/acer/Unity II/Unity Assigment 4/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>C:/Users/acer/Unity Assigment 4/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -320,7 +320,7 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="OSCsharp">
- <HintPath>C:/Users/acer/Unity II/Unity Assigment 4/Assets/UniOSC/Lib/OSCsharp.dll</HintPath>
+ <HintPath>C:/Users/acer/Unity Assigment 4/Assets/UniOSC/Lib/OSCsharp.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Users/acer/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
